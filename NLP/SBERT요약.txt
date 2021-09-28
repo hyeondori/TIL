@@ -1,0 +1,20 @@
+1. 우리는 Sentence-BERT를 소개한다.
+	1) siamse 네트워크과 triplet 네트워크를 활용한 BERT의 변형 버전이다.
+	2) semantically meaningful sentence embeddings를 구할 수 있다.
+	3) 기존의 BERT에 적용할 수 없던 NLP tasks(large-scale semantic similarity comparison, clustering, and information retrieval via semantic search 등...)도 SBERT를 통해 적용 가능하다.
+2. pair regression task의 경우, 10,000개의 문장 집합에서 가능한 pair 조합은 49,995,000개로, V100에서 BERT로 추론시 65시간이 걸린다.
+3. clustering이나 semantic search에서 흔한 방법론이 문장을 벡터 공간으로 mapping하여 의미적으로 유사한 것이 공간상 가깝도록 하는 것인데, 최근 연구자들은 각각의 문장을 BERT로 포워딩해 평균하거나, CLS 토큰의 값을 이용해왔다. 그러나 이런 방법들은 GloVe 임베딩에 평균을 취하는 것보다 별로다.
+4. 이러한 이슈들을 해결하고자 SBERT를 개발했다.
+	1) siamese 네트워크는 입력 문장에 대한 고정 크기의 벡터 출력을 가능케 한다.
+	2) cosine similarity, manhatten/euclidean distance 같은 유사도 측정 방법으로부터 의미적으로 유사한 문장을 찾을 수 있다.
+	3) 이러한 유사도 측정 방법들은 현대의 하드웨어에서 아주 효율적으로 구동되어 SBERT는 semantic smilarity search나 clustering같은 목적으로 쓰일 수 있다.
+	4)BERT는 10,000개의 문장 집합에서 유사한 문장 pair를 찾는 데 걸리는 시간이 65시간인 반면, SBERT의 출력인 fixed-size vector 10,000개에서 유사한 문장 pair를 찾는 작업은 5초로 줄어들었다. 코사인 유사도는 0.01초가 걸린다.
+	
+BERT: Bidirectional Encoder Representation from Transformer
+Pre-training before Fine-tuning
+Pre-training through MLM and NSP tasks
+
+Cross-encoder:
+pair-wise한 인풋이 트랜스포머 네트워크에 들어가고 타겟 벨류가 분류 레이어에 들어가면서 예측을 하는 과정
+
+문장의 첫번째 토큰은 반드시 CLS로 시작을 함.
