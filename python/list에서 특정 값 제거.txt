@@ -38,6 +38,6 @@ remove_set = {HIJK_LMF, IKEL_LMF}
 
 li = [i for i in li if i not in remove_set]
 print(li)
-
+d
 위의 방법은 내가 고민해본 방법 중에서는 list에서 특정한 원소를 제거하기 위해 가장 효율적인 방법이 아닌가 생각한다.
 현재 당면한 문제가 이를 통해 해소가 될지는 아직 미지수이나 꽤 그럴싸한 결론이라 생각이 되어 기록한다.
