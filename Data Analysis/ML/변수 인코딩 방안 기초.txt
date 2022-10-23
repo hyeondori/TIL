@@ -1,0 +1,19 @@
+지난 번에, 변수 인코딩 방안 중 binning에 대해 소개하였다.
+
+사실 binning은 변수 인코딩 방안 중 꽤 고급 레벨에 해당한다.
+보통 맞추기 어려운 과제를 맞이하여 수많은 변수 중에 가능성을 찾기 위해 binning까지 활용하게 되는데, 이 외에도 인코딩 방식은 상황에 따라 분석가의 판단에 따라 얼마든지 있으니 조금 더 고민해 보길 바란다.
+
+오늘은 binning보다는 조금 더 쉬운 레벨이지만, 정말 당연하게 자주 사용하는 인코딩 방식에 대해 서술해보려 한다.
+
+분석가라면 해당 기법들은 아주 익숙하게 알아야만 한다.
+
+1. label encoding 2. factorize 3. one-hot encoding
+
+위 세가지는 워낙 자주 사용하다보니 바로 관련된 라이브러리도 함께 공유할까 한다.
+
+1.1. label encoding - sklearn.processing.LabelEncoder
+2.1. factorize - pandas.factorize()
+3.1. one-hot encoding - sklearn.processing.OneHotEncoder
+3.2. one-hot encoding - pandas.get_dummies()
+
+관련된 코드는 위 키워드로 검색하면 바로 알 수 있으니 참고 바라며, 분석 중 위 도구를 적절히 활용해 보시길 바란다.
