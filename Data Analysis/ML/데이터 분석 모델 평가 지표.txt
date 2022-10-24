@@ -1,0 +1,61 @@
+우리가 모델을 만드는 이유는 일반화를 통해 미래를 예측하기 위해서일 것이다.
+높은 성능을 가지는 모델을 개발하기 위해 우리는 더욱 양질의 데이터셋을 구축하고, 알고리즘을 수정할 것이다.
+그렇다면 어떤 모델이 높은 성능을 가진다고 평가할 수 있을까?
+
+알고리즘을 잘 선택하는 것만큼이나 적절한 평가지표를 찾아 활용하는 것 또한 굉장히 중요하다고 볼 수 있다.
+잘 모르는 사람은 Accuracy라는 단어가 주는 어감 때문인지 해당 평가지표에만 집착하는 경향을 보이기도 하는데,
+그럴 때마다 올바른 평가지표가 얼마나 중요한지에 대해서 설득하기 위해 평가지표에 대해 얘기해 보고자 한다.
+
+우리가 예측 모형의 종류는 나눌 때 크게, 분류 모형과 회귀 모형을 나누게 된다.
+
+우리는 이 둘을 나눌 대 연속형 결과를 예측하는지, 이산형 결과를 예측하는지에 따라 나누게 되는데
+평가지표 또한 이 둘에 따라 달라지게 된다.
+
+두가지 모형에 대한 평가지표는 각각 다음과 같다.
+
+회귀(Regression) 모델
+- MSPE
+- MSAE
+- R Square
+- Adjusted R Square
+
+분류(Classification) 모델
+- Precision-Recall
+- ROC-AUC
+- Accuracy
+- Log-Loss
+
+그 외에도
+
+비지도(Unsupervised) 모델
+- Rand Index
+- Mutual information
+
+기타
+- CV Error
+- Heuristic methods to find K
+- BLEU Score(NLP)
+
+회귀모델 평가지표부터 하나씩 알아보면,
+
+● MAE(Mean Absolute Error)
+모델의 예측값과 실제값의 차이를 모두 더해 오차의 총합에 대한 평균을 나타내는 지표.
+MSE보다 특이치에 Robust하다는 특징이 있다.
+단점은 절대값을 취하기 때문에 모델이 주로 실제값에 비해 낮게 예측하는지 높게 예측하는지 알 수 없어진다.
+
+● MSE(Mean Squared Error)
+차이의 제곱을 한 값의 평균을 내는 방식으로 특이값에 민감하게 반응한다.
+
+● RMSE(Root Mean Squared Error)
+MSE에 제곱근을 씌워 실제값과 유사한 단위로 변환함으로써 해석을 쉽게 하게 해준다.
+
+● MAPE(Mean Absolute Percentage Error)
+MAE를 퍼센트로 변환한 것으로 MAE와 비슷한 특징을 가진다.
+
+● RMSLE(Root Mean Square Logarithmic Error)
+RMSE에 Log를 취한 것이다.
+
+● R2 Score(Coefficient of Determiation, 결정계수)
+상대적으로 얼마나 성능이 나오는지를 측정한 지표로 상대적인 성능을 알고 싶을 때 사용하면 직관적이다.
+
+분류모델 평가지표는 주로 Confusion Matrix에 관련된 사항이므로, 따로 다루거나 다음에 업데이트 하도록 한다.
